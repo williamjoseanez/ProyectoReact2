@@ -1,20 +1,26 @@
 import { Button } from "@mui/material";
 
-const CounterPresentacional = ( {sumar, contador, restar, nombre, setNombre} ) => {
-
+const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
   return (
     <div className="centrar">
-      <Button variant="outlined" onClick={sumar}>sumar</Button>
-      {/* <button onClick={sumar}>sumar</button> */}
-      <h4> {contador} </h4>
-      {/* <button onClick={restar}>restar</button> */}
-      <Button variant="outlined" onClick={restar}>Restar</Button>
-      
+      <Button variant="outlined" onClick={sumar}>
+        sumar
+      </Button>
 
-      <h4>{nombre}</h4>
-      <Button variant="contained" disableElevation onClick={() => setNombre("juancito")}>
-      Cambiar nombre</Button>
-      {/* <button onClick={()=>setNombre("juancito")}>Cambiar nombre</button> */}
+      <h4> {contador} </h4>
+
+      <Button variant="outlined" onClick={restar}>
+        Restar
+      </Button>
+
+      <Button
+        variant="contained"
+        disableElevation
+        onClick={() => onAdd(contador)}
+      >
+        {" "}
+        Agregar 🛒🛒🛒
+      </Button>
     </div>
   );
 };

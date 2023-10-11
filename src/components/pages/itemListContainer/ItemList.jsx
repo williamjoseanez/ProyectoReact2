@@ -1,11 +1,12 @@
-import "./ItemList.css";
+import ProductCard from "../../common/productCard/ProductCard";
 
-const ItemList = () => {
+const ItemList = ({ items }) => {
   return (
-    <div>
-      <h1 className="centrar">Mi Proyecto React</h1>
-      <h2 className="center">William Anez</h2>
-    </div>
+    <section style={{display: "flex", justifyContent:"space-evenly"}}>
+      {items.map((item) => {
+        return <ProductCard key={item.id} item={item} />
+      })}
+    </section>
   );
 };
 

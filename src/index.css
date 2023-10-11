@@ -4,3 +4,17 @@
   box-sizing: border-box;
   /* background-color: rgb(43, 221, 221); */
 }
+
+.noFound {
+  display: grid;
+  place-items: center;
+  margin-top: 50px;
+  color: red;
+  background-color: black;
+  padding: 5rem;
+}
+
+.noFoundLogo {
+ border-color: white;
+ border-radius: 30%;
+}
