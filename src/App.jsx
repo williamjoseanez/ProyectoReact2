@@ -1,27 +1,30 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/pages/itemDetailContainer/ItemDetailContainer";
+import { Navbar } from "./components/layout/navbar/Navbar";
+import Cart from "./components/pages/cart/Cart";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-    
       <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/cart" element={<h1> estoy en el carrito</h1>} />
-        <Route path="/itemDetail" element={<ItemDetailContainer />} />
-
-        <Route path="*" element={ <div>
-          <img src="https://res.cloudinary.com/dheurnsr0/image/upload/v1696103453/nyhdohjxvy8f4hwltcu9.jpg" />,
-          <h1>Not Found,
-          pagina no encontrada!!!</h1>
-        </div> } />
-        
-        
-        
+        <Route element={<Navbar />}>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Cart/>} />
+        </Route>
+        <Route
+          path="*"
+          element={
+            <div className="noFound">
+              <img className="noFoundLogo" src="https://res.cloudinary.com/dheurnsr0/image/upload/v1696103453/nyhdohjxvy8f4hwltcu9.jpg" />
+              ,<h1>Not Found, pagina no encontrada!!!</h1>
+              <Link to="/">
+                <button> volver a la pagina principal</button>
+                </Link>
+            </div>
+          }
+        />
       </Routes>
-     
-    
     </BrowserRouter>
   );
 }
