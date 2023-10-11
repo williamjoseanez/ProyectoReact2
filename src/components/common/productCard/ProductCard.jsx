@@ -30,7 +30,7 @@ import {
         <CardActions>
           <Link to={`/itemDetail/${item.id}`}>
             <Button size="small" variant="outlined">
-              Ver detalle
+              Explorar
             </Button>
           </Link>
         </CardActions>
