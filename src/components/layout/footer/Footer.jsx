@@ -1,12 +1,14 @@
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
+import "./footer.css";
 
 const Footer = () => {
   return (
     <>
      
-      <div style={{ width: "100%", backgroundColor: "black", height: "10vh" }}>
-        <h4 style={{ color: "white" }}>Este es el footer</h4>
+      <div  className="div_footer" >
+        <h4>Este es el footer</h4>
       </div>
+
     </>
   );
 };

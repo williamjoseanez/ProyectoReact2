@@ -1,10 +1,11 @@
-import { Navbar } from "./navbar/Navbar";
-import Footer from "./footer/Footer";
 import { Outlet } from "react-router-dom";
+import Footer from "./footer/Footer";
+import { Navbar } from "./navbar/Navbar";
 
 const Layout = () => {
   return (
     <div>
+     
       <div style={{ height: "10vh" }}>
         <Navbar />
       </div>

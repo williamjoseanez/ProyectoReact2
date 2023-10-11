@@ -14,26 +14,26 @@ export const Navbar = () => {
         
 
         <ul className="categories">
-         <Link to="/pepito">
-            <li>Ofertas</li>
+         <Link to="/">
+            <li>Productos</li>
           </Link>
-          <Link to="/pepito">
-            <li>Promocioness</li>
+          <Link to="/category/promociones">
+            <li>Promociones</li>
           </Link>
-          <Link to="/pepito">
+          <Link to="/category/fiambres">
           <li>Fiambres</li>
           </Link>
-          <Link to="/pepito">
+          <Link to="category/almacen">
         <li>Almacen</li>
           </Link>
-          <Link to="/pepito">
+          <Link to="category/bebidas">
       <li>Bebidas</li>
       </Link>
         </ul>
 
         <CartWidget />
       </div>
-      <Outlet />
+   
     </>
   );
 };

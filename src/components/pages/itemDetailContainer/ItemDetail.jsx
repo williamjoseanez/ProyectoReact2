@@ -5,7 +5,7 @@ export const ItemDetail = ({ productSelected, onAdd }) => {
     <div>
       {/* aca todo el detalle */}
       <h2>{productSelected.title}</h2>
-      <img src={productSelected.img} alt="" />
+      <img src={productSelected.img} alt="productos" />
       {/* Aca el contador */}
       <CounterContainer stock={productSelected.stock} onAdd={onAdd} />
     </div>
