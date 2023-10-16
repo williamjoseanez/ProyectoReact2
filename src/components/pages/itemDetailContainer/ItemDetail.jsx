@@ -2,12 +2,12 @@ import CounterContainer from "../../common/counter/CounterContainer";
 
 export const ItemDetail = ({ productSelected, onAdd }) => {
   return (
-    <div>
-      {/* aca todo el detalle */}
+    <div className="noFound">
+      
       <h2>{productSelected.title}</h2>
-      <img src={productSelected.img} alt="productos" />
-      {/* Aca el contador */}
-      <CounterContainer stock={productSelected.stock} onAdd={onAdd} />
-    </div>
+      <img  className="noFoundLogo" src={productSelected.img} alt="productos" />
+      <h3>{productSelected.description }</h3>
+      <CounterContainer stock={productSelected.stock} onAdd={onAdd} /> 
+         </div>
   );
 };

@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
 
     const getProduct = new Promise((resolve, reject) => {
       resolve(producto);
-      // reject("error");
+      reject("error");
     });
 
     getProduct

@@ -10,6 +10,7 @@ import {
   
   const ProductCard = ({ item }) => {
     return (
+      <div className="cardOne">
       <Card sx={{ maxWidth: 345 }}>
         <CardMedia
           sx={{ height: 140 }}
@@ -17,10 +18,10 @@ import {
           title={`image ${item.title}`}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="div">
+          <Typography gutterBottom variant="h5" component="div">
             {item.title}
           </Typography>
-          <Typography variant="h6" color="text.secondary">
+          <Typography variant="" color="text.secondary">
             {item.description}
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -30,11 +31,14 @@ import {
         <CardActions>
           <Link to={`/itemDetail/${item.id}`}>
             <Button size="small" variant="outlined">
-              Explorar
+              Detalles
             </Button>
           </Link>
+         
         </CardActions>
+      
       </Card>
+      </div>
     );
   };
   
