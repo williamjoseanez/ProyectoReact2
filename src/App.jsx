@@ -11,28 +11,33 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={customTheme}>
-
-      <Routes>
-        <Route element={<Layout />}>
+        <Routes>
+          <Route element={<Layout />}>
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="/category/:categoryName" element={ <ItemDetailContainer/>} />
-          <Route path="/cart" element={<Cart />} />
-           <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-        </Route>
-        <Route
-          path="*"
-          element={
-            <div className="noFound">
-              <img className="noFoundLogo" src="https://res.cloudinary.com/dheurnsr0/image/upload/v1696103453/nyhdohjxvy8f4hwltcu9.jpg" />
-              ,<h1>Not Found, pagina no encontrada!!!</h1>
-              <Link to="/">
-                <button> volver a la pagina principal</button>
+            <Route
+              path="/category/:categoryName"
+              element={<ItemListContainer />}
+            />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <div className="noFound">
+                <img
+                  className="noFoundLogo"
+                  src="https://res.cloudinary.com/dheurnsr0/image/upload/v1696103453/nyhdohjxvy8f4hwltcu9.jpg"
+                />
+                <h1>Not Found, pagina no encontrada!!!</h1>
+                <Link to="/">
+                  <button> volver a la pagina principal</button>
                 </Link>
-            </div>
-          }
+              </div>
+            }
           />
-      </Routes>
-          </ThemeProvider>
+        </Routes>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

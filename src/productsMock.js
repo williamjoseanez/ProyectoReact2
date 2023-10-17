@@ -36,40 +36,4 @@ export let products = [
         category: "promociones",
         img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
     }
-    // {
-    //     id: 5,
-    //     title: "Promocion 5",
-    //     price: 1480,
-    //     stock: 4,
-    //     description: "250gr de Queso de Maquina y 250gr de Jamon Cocido",
-    //     category: "promociones",
-    //     img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    // },
-    // {
-    //     id: 6,
-    //     title: "Promocion 3",
-    //     price: 1480,
-    //     stock: 4,
-    //     description: "250gr de Queso de Maquina y 250gr de Jamon Cocido",
-    //     category: "promociones",
-    //     img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    // },
-    // {
-    //     id: 7,
-    //     title: "Promocion 2",
-    //     price: 1480,
-    //     stock: 4,
-    //     description: "250gr de Queso de Maquina y 250gr de Jamon Cocido",
-    //     category: "promociones",
-    //     img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    // },
-    // {
-    //     id: 8,
-    //     title: "Promocion 1",
-    //     price: 1480,
-    //     stock: 4,
-    //     description: "250gr de Queso de Maquina y 250gr de Jamon Cocido",
-    //     category: "promociones",
-    //     img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    // }
 ]
