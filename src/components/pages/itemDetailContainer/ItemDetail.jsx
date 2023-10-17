@@ -6,11 +6,23 @@ import "./itemdetail.css";
 export const ItemDetail = ({ productSelected, onAdd }) => {
   return (
     <div className="detalle">
-      <h2>{productSelected.title}</h2>
-      <img className="noFoundLogo" src={productSelected.img} alt="productos" />
-      <h3>{productSelected.description}</h3>
-      <h4>{productSelected.detalle}</h4>
-      <CounterContainer stock={productSelected.stock} onAdd={onAdd} />
+      <div>
+        <img
+          className="noFoundLogo"
+          src={productSelected.img}
+          alt="productos"
+        />
+      </div>
+
+      <div className="detalle_producto">
+        <h2>{productSelected.title}</h2>
+        <h3>{productSelected.description}</h3>
+        <h4>{productSelected.detalle}</h4>
+        <h4>{productSelected.duracion}</h4>
+        <h2 className="product_price">${productSelected.price}</h2>
+      
+      </div>
+
       <div>
         <Button
           variant="contained"
@@ -20,6 +32,9 @@ export const ItemDetail = ({ productSelected, onAdd }) => {
           {" "}
           Regresar atras
         </Button>
+      </div>
+      <div>
+      <CounterContainer stock={productSelected.stock} onAdd={onAdd} />
       </div>
       <MaterialUi />
     </div>

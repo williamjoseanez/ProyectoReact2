@@ -13,7 +13,7 @@ export let products = [
   },
   {
     id: 2,
-    title: "Angular",
+    title: "Angular Js",
     price: 325000,
     stock: 5,
     description: "Framework para aplicaiones",

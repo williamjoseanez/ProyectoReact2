@@ -1,8 +1,32 @@
 .detalle {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
     margin-top: 50px;
     color: white;
-    }
+}
 
+.centrar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2rem;
+         gap: 20px;
+}
+
+.detalle_producto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 3rem;
+    width: 600px;
+    height: 350px;
+ 
+}
+
+.product_price {
+    color: maroon;
+    font-size: 40px;
+}
     
