@@ -1,39 +1,50 @@
-
 export let products = [
-    {
-        id: 1,
-        title: "Queso Cremoso",
-        price: 2300,
-        stock: 5,
-        description: "El mejor queso Cremoso",
-        category: "ofertas",
-        img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/93998407_248460713192895_8521944413595762688_n.jpg?stp=dst-jpg_p206x206&_nc_cat=110&ccb=1-7&_nc_sid=da31f3&_nc_ohc=ATuULbzDD_cAX8zM5x8&_nc_ht=scontent.fepa4-1.fna&oh=00_AfCbnEzLfgQDyxPpH7PlwHR7OpeLfAaqQUO-hvabZRjMSw&oe=653B103F"
-    },
-    {
-        id: 2,
-        title: "Promocion 7",
-        price: 1480,
-        stock: 4,
-        description: "250gr de Queso de Maquina y 250gr de Jamon Cocido",
-        category: "promociones",
-        img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    },
-    {
-        id: 3,
-        title: "Mortadela",
-        price: 900,
-        stock: 4,
-        description: "250gr de Mortadela Cachaquil",
-        category: "fiambres",
-        img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    },
-    {
-        id: 4,
-        title: "Promocion 6",
-        price: 1480,
-        stock: 4,
-        description: "250gr de Queso de Maquina y 250gr de Jamon Cocido",
-        category: "promociones",
-        img: "https://scontent.fepa4-1.fna.fbcdn.net/v/t1.6435-9/119036732_355594609146171_4406772827973905623_n.jpg?stp=dst-jpg_p206x206&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=2eD0kBdTBWYAX84l-5F&_nc_ht=scontent.fepa4-1.fna&oh=00_AfAD7r3RsjWFosd27Gx5aqykJ528QDG5jNCrKzhUsZLszQ&oe=653B3021"
-    }
-]
+  {
+    id: 1,
+    title: "JavaScript",
+    price: 345000,
+    stock: 5,
+    description: "Lenguaje de programacion",
+    detalle: `"JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, 
+    basado en prototipos, imperativo, débilmente tipado y dinámico."`,
+    duracion: "2 años",
+    category: "carrera",
+    img: "https://res.cloudinary.com/dheurnsr0/image/upload/v1697503733/JavaScritp_sal8cc.jpg",
+  },
+  {
+    id: 2,
+    title: "Angular",
+    price: 325000,
+    stock: 5,
+    description: "Framework para aplicaiones",
+    detalle: `"Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, 
+    mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página."`,
+    duracion: "4 meses",
+    category: "curso",
+    img: "https://res.cloudinary.com/dheurnsr0/image/upload/v1697503728/angulas_js_oqbhrx.jpg",
+  },
+  {
+    id: 3,
+    title: "React Js",
+    price: 230000,
+    stock: 5,
+    description: "Libreria de JavaScript",
+    detalle: `"React es una librería Javascript de código abierto diseñada para crear interfaces
+    de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página."`,
+    duracion: "6 meses",
+    category: "curso",
+    img: "https://res.cloudinary.com/dheurnsr0/image/upload/v1697503729/react_eex4np.jpg",
+  },
+  {
+    id: 4,
+    title: "HTML5",
+    price: 180000,
+    stock: 5,
+    description: "Lenguaje de marcado",
+    detalle: `"HTML, siglas en inglés de HyperText Markup Language, 
+    hace referencia al lenguaje de marcado para la elaboración de páginas web."`,
+    duracion: "1 año",
+    category: "carrera",
+    img: "https://res.cloudinary.com/dheurnsr0/image/upload/v1697503731/html_gdouu1.jpg",
+  },
+];

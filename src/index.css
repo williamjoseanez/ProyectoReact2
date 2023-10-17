@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(218, 191, 191);
+  background:linear-gradient(to bottom, #000046, #1CB5E0 );
 }
 
 .noFound {
