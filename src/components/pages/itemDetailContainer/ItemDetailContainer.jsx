@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { products } from "../../../productsMock.js";
 import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext.jsx";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
 
   const { id } = useParams();
+
+
+  const { addToCart } = useContext(CartContext)
+  
 
   // const navigate = useNavigate();
 
@@ -24,11 +29,11 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (cantidad) => {
-    let obj = {
+    let item = {
       ...productSelected,
       quantity: cantidad,
     };
-    console.log("este es el producto que se agrega", obj);
+   addToCart(item)
     // CODIGO hooks PARA NAVEGAR, ACA AL AGREGAR AL CARRITO SE REDIRIGE SOLO A LA PAGINA CARRITO
 
     // setTimeout(() => {
