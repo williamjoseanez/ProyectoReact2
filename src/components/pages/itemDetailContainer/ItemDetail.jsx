@@ -2,8 +2,12 @@ import { Button } from "@mui/material";
 import CounterContainer from "../../common/counter/CounterContainer";
 import MaterialUi from "../../materialUi/MaterialUi";
 import "./itemdetail.css";
+import Swal from 'sweetalert2'
 
-export const ItemDetail = ({ productSelected, onAdd }) => {
+
+
+
+export const ItemDetail = ({ productSelected, onAdd, initial}) => {
   return (
     <div className="detalle">
       <div>
@@ -20,8 +24,14 @@ export const ItemDetail = ({ productSelected, onAdd }) => {
         <h4>{productSelected.detalle}</h4>
         <h4>{productSelected.duracion}</h4>
         <h2 className="product_price">${productSelected.price}</h2>
+        {
+          initial && 
+          
+          <h4> Agregaste {initial} productos en el carrito 🛒 </h4>
+        }
       
       </div>
+   
 
       <div>
         <Button
@@ -32,9 +42,11 @@ export const ItemDetail = ({ productSelected, onAdd }) => {
           {" "}
           Regresar atras
         </Button>
+        
+        
       </div>
       <div>
-      <CounterContainer stock={productSelected.stock} onAdd={onAdd} />
+      <CounterContainer stock={productSelected.stock} onAdd={onAdd} initial={initial} />
       </div>
       <MaterialUi />
     </div>

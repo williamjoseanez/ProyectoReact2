@@ -10,8 +10,10 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
 
-  const { addToCart } = useContext(CartContext)
+  const { addToCart, getQuantityById } = useContext(CartContext)
   
+  let totalQuantity = getQuantityById(+id)
+
 
   // const navigate = useNavigate();
 
@@ -42,7 +44,7 @@ const ItemDetailContainer = () => {
   };
   //aca finaliza el codigo hooks para hacer navegar solo cuando le das click en agregar al carrito,
   // arriba de todo esta el const navigate (hooks)
-  return <ItemDetail productSelected={productSelected} onAdd={onAdd} />;
+  return <ItemDetail productSelected={productSelected} onAdd={onAdd} initial ={totalQuantity} />;
 };
 
 export default ItemDetailContainer;

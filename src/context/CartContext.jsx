@@ -29,7 +29,17 @@ const CartContextComponent = ({ children }) => {
     return exist;
   };
 
-  let data = { cart, addToCart };
+  const getQuantityById = (id) => {
+    let product = cart.find(elemento => elemento.id === id)
+    return product?.quantity
+  } 
+    
+  const clearCart = () => {
+    setCart([]);
+  }
+    
+    
+  let data = { cart, addToCart, getQuantityById, clearCart };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };

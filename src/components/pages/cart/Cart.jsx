@@ -2,9 +2,10 @@ import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart} = useContext(CartContext);
 
   return (
     <div className="noFound">
@@ -21,6 +22,8 @@ const Cart = () => {
       <Link to="/checkout">
         <Button variant="contained">Ir A Pagar</Button>
       </Link>
+      <Button variant="contained" onClick={clearCart}> Vaciar Carrito</Button>
+  
     </div>
   );
 };
