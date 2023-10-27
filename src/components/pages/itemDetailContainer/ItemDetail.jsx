@@ -2,8 +2,6 @@ import { Button } from "@mui/material";
 import CounterContainer from "../../common/counter/CounterContainer";
 import MaterialUi from "../../materialUi/MaterialUi";
 import "./itemdetail.css";
-import Swal from 'sweetalert2'
-
 
 
 
