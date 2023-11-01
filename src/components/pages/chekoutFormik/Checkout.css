@@ -1,0 +1,15 @@
+.formu_centro {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+.form_style{
+    display: grid;
+    padding: 1rem;
+    width: 30%;
+    gap: 1rem;
+    background-color: rgb(145, 185, 231);
+    border-radius: 10px;
+    margin-left: 2rem;
+
+}
