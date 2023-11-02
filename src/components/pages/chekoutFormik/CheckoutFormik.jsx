@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import "./Checkout.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 
 const CheckoutFormik = () => {
   const { handleChange, handleSubmit, errors } = useFormik({
@@ -69,9 +70,11 @@ const CheckoutFormik = () => {
         <Button variant="contained" type="submit">
           Enviar
         </Button>
+        <Link to="/cart">
         <Button variant={"outlined"} type="button">
-          Cancelar
+          Volver al Carrito
         </Button>
+        </Link>
       </form>
     </div>
   );

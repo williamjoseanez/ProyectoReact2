@@ -29,17 +29,46 @@ const CartContextComponent = ({ children }) => {
     return exist;
   };
 
+  //funcion que nos permite saber la cantidad de productos
   const getQuantityById = (id) => {
-    let product = cart.find(elemento => elemento.id === id)
-    return product?.quantity
-  } 
-    
+    let product = cart.find((elemento) => elemento.id === id);
+    return product?.quantity;
+  };
+
+  //funcion para vaciar el carrito completo
   const clearCart = () => {
     setCart([]);
-  }
-    
-    
-  let data = { cart, addToCart, getQuantityById, clearCart };
+  };
+
+  //funcion para borrar un producto del carrito
+  const deleteProductById = (id) => {
+    let newArray = cart.filter((product) => product.id !== id);
+    setCart(newArray);
+  };
+  //funcion que nos permite saber el total a pagar
+  const calculateTotalPrice = () => {
+    let total = cart.reduce((acc, item) => {
+      return acc + item.price * item.quantity;
+    }, 0);
+    return total;
+  };
+
+  const getTotalQuantity = () => {
+    let total = cart.reduce((acc, item) => {
+      return acc + item.quantity;
+    }, 0);
+    return total;
+  };
+
+  let data = {
+    cart,
+    addToCart,
+    getQuantityById,
+    clearCart,
+    deleteProductById,
+    calculateTotalPrice,
+    getTotalQuantity,
+  };
 
   return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };

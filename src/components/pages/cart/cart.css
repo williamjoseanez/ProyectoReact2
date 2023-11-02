@@ -1,0 +1,38 @@
+.Cart_texto {
+  display: flex;
+  justify-content: center;
+padding-top: 1rem;
+/* background:linear-gradient(to bottom, #000046, #71abbb ); */
+  color: aliceblue;
+  align-items: center;
+}
+
+.carrito_cart {
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 3rem;
+  color: antiquewhite;
+}
+
+.carrito_cart_img {
+  width: auto;
+  text-align: center;
+}
+
+.imagen_carrito {
+  width: 50%;
+  border-radius: 20%;
+}
+
+.boton_carrito {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  padding: 10px;
+  gap: 1rem;
+}
+

@@ -2,27 +2,43 @@ import { Button } from "@mui/material";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import "./cart.css";
 
 const Cart = () => {
-  const { cart, clearCart} = useContext(CartContext);
+  const { cart, clearCart, deleteProductById, calculateTotalPrice } =
+    useContext(CartContext);
+
+  let total = calculateTotalPrice();
 
   return (
-    <div className="noFound">
-      {/* <img className="noFoundLogo" src="https://res.cloudinary.com/dheurnsr0/image/upload/v1696103453/nyhdohjxvy8f4hwltcu9.jpg" /> */}
-      <h1>Estas visitando el Carrrido de compras</h1>
+    <div>
+      <div className="Cart_texto">
+        <h1>Estas visitando el Carrrido de compras</h1>
+      </div>
 
       {cart.map((product) => (
-        <div key={product.id}>
-          <img  src={product.img} alt="" />
-          <h2 >{product.title}</h2>
-          <h2 >cantidad: {product.quantity}</h2>
+        <div key={product.id} className="carrito_cart">
+          <div className="carrito_cart_img">
+            <img className="imagen_carrito" src={product.img} alt="" />
           </div>
+          <h2>{product.title}</h2>
+          <h2>cantidad: {product.quantity}</h2>
+          <h2>$ {product.price}</h2>
+          <Button onClick={() => deleteProductById(product.id)}>🗑️❌</Button>
+        </div>
       ))}
-      <Link to="/checkout">
-        <Button variant="contained">Ir A Pagar</Button>
-      </Link>
-      <Button variant="contained" onClick={clearCart}> Vaciar Carrito</Button>
-  
+      <div className="Cart_texto ">
+        <h2>El total a pagar es: $ {total}</h2>
+      </div>
+      <div className="boton_carrito">
+        <Link to="/checkout">
+          <Button variant="contained">Ir A Pagar</Button>
+        </Link>
+        <Button variant="contained" onClick={clearCart}>
+          {" "}
+          Vaciar Carrito
+        </Button>
+      </div>
     </div>
   );
 };
