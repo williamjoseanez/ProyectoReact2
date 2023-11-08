@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { red } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { image } from "@cloudinary/url-gen/qualifiers/source";
 
 const ProductCard = ({ item }) => {
   return (
