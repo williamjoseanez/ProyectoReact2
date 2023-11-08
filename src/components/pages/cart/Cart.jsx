@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import "./cart.css";
 
+
 const Cart = () => {
   const { cart, clearCart, deleteProductById, calculateTotalPrice } =
     useContext(CartContext);
@@ -34,6 +35,7 @@ const Cart = () => {
         <Link to="/checkout">
           <Button variant="contained">Ir A Pagar</Button>
         </Link>
+
         <Button variant="contained" onClick={clearCart}>
           {" "}
           Vaciar Carrito

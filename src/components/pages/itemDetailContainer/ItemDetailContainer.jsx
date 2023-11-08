@@ -3,6 +3,7 @@ import { products } from "../../../productsMock.js";
 import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext.jsx";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
@@ -35,7 +36,16 @@ const ItemDetailContainer = () => {
       ...productSelected,
       quantity: cantidad,
     };
-   addToCart(item)
+    addToCart(item)
+     
+Swal.fire({
+  position: 'top-center',
+  icon: 'success',
+  title: 'El producto se agrego correctamente',
+  showConfirmButton: false,
+  timer: 1500
+})
+
     // CODIGO hooks PARA NAVEGAR, ACA AL AGREGAR AL CARRITO SE REDIRIGE SOLO A LA PAGINA CARRITO
 
     // setTimeout(() => {
