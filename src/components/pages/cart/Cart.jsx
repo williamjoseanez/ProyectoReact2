@@ -9,9 +9,6 @@ import Swal from "sweetalert2";
 const Cart = () => {
   const { cart, clearCart, deleteProductById, calculateTotalPrice } =
     useContext(CartContext);
-  
-  
-  
 
   let total = calculateTotalPrice();
 
@@ -23,10 +20,10 @@ const Cart = () => {
   //     confirmButtonText: "Eliminar",
   //     denyButtonText: `Cancelar`
   //   }).then((result) => {
-      
+
   //     /* Read more about isConfirmed, isDenied below */
   //     if (result.isConfirmed) {
-  //       deleteProductById()
+  //       // deleteProductById(product.id)
   //           Swal.fire("Confirmado!", "", "success");
   //     } else if (result.isDenied) {
   //       Swal.fire("Volver al Carrito", "", "info");
@@ -40,30 +37,29 @@ const Cart = () => {
       showDenyButton: true,
       showCancelButton: false,
       confirmButtonText: "Eliminar",
-      denyButtonText: `Cancelar`
+      denyButtonText: `Cancelar`,
     }).then((result) => {
-    
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        clearCart()
+        clearCart();
         Swal.fire("Confirmado!", "", "success");
       } else if (result.isDenied) {
         Swal.fire("Volver al Carrito", "", "info");
       }
     });
-  }
+  };
 
   return (
     <div>
-      {
-
-        cart.length === 0 &&
+      {cart.length === 0 && (
         <div className="Cart_texto">
-            <h1>Tu carrito de compra esta vacio</h1>
-            <img src="https://res.cloudinary.com/dheurnsr0/image/upload/v1699482506/carrito-compra-vacio-aislado-sobre-fondo-blanco_188237-86-removebg-preview_sx4shy.png" alt="" />
-        
-          </div>
-      }
+          <h1>Tu carrito de compra esta vacio</h1>
+          <img
+            src="https://res.cloudinary.com/dheurnsr0/image/upload/v1699482506/carrito-compra-vacio-aislado-sobre-fondo-blanco_188237-86-removebg-preview_sx4shy.png"
+            alt=""
+          />
+        </div>
+      )}
 
       {cart.map((product, sumar, restar) => (
         <div key={product.id} className="carrito_cart">
@@ -80,42 +76,39 @@ const Cart = () => {
           <span>${product.price} </span>
           <h2> Total : $ {product.price * product.quantity}</h2>
 
-          <Button onClick={() =>   deleteProductById(product.id)}>
+          <Button onClick={() => deleteProductById(product.id)}>
             <DeleteSweepIcon />
           </Button>
         </div>
       ))}
 
-      {
-       
-        cart.length > 0 && <div>
-        <div className="Cart_texto ">
-          <h2>El total a pagar es: $ {total}</h2>
-        </div>
-        <div className="boton_carrito">
-          <Link to="/checkout">
-            <Button variant="contained">Ir A Pagar</Button>
-          </Link>
+      {cart.length > 0 && (
+        <div>
+          <div className="Cart_texto ">
+            <h2>El total a pagar es: $ {total}</h2>
+          </div>
+          <div className="boton_carrito">
+            <Link to="/checkout">
+              <Button variant="contained">Ir A Pagar</Button>
+            </Link>
 
-          <Button variant="contained" onClick={clarCartWithAlert}>
-            {" "}
-            Vaciar Carrito
-          </Button>
-          <div>
-            <Button
-              variant="contained"
-              disableElevation
-              onClick={() => window.history.back()}
-            >
+            <Button variant="contained" onClick={clarCartWithAlert}>
               {" "}
-              Regresar al detalle
+              Vaciar Carrito
             </Button>
+            <div>
+              <Button
+                variant="contained"
+                disableElevation
+                onClick={() => window.history.back()}
+              >
+                {" "}
+                Regresar al detalle
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-
-      }
-      
+      )}
     </div>
   );
 };
