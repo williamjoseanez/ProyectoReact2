@@ -7,6 +7,7 @@ export let products = [
     description: "Fiambreria",
     detalle: `" * 250gr de queso de maquina
     *250gr de Salame "`,
+    duracion: "En stock",
     category: "promociones",
     img: "https://res.cloudinary.com/dheurnsr0/image/upload/v1699399301/promo_1_pp656g.png",
   },
