@@ -3,7 +3,9 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextComponent = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
 
   const addToCart = (product) => {
     let exist = isInCart(product.id);
@@ -12,15 +14,17 @@ const CartContextComponent = ({ children }) => {
         if (elemento.id === product.id) {
           return {
             ...elemento,
-            quantity: elemento.quantity + product.quantity,
+            quantity: product.quantity,
           };
         } else {
           return elemento;
         }
       });
       setCart(newArr);
+      localStorage.setItem("cart", JSON.stringify([newArr]));
     } else {
       setCart([...cart, product]);
+      localStorage.setItem("cart", JSON.stringify([...cart, product]));
     }
   };
 
@@ -38,13 +42,17 @@ const CartContextComponent = ({ children }) => {
   //funcion para vaciar el carrito completo
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart");
   };
 
+  //funcion para eliminar un producto del carrito
   //funcion para borrar un producto del carrito
   const deleteProductById = (id) => {
-    let newArray = cart.filter((product) => product.id !== id);
-    setCart(newArray);
+    let newArr = cart.filter((product) => product.id !== id);
+    setCart(newArr);
+    localStorage.setItem("cart", JSON.stringify(newArr));
   };
+
   //funcion que nos permite saber el total a pagar
   const calculateTotalPrice = () => {
     let total = cart.reduce((acc, item) => {

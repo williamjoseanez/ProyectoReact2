@@ -5,11 +5,14 @@ import { useParams } from "react-router-dom";
 import CartSkeleton from "../../common/cartSkeleton/cartSkeleton";
 import { db } from "../../../firebaseconfig";
 
+
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { categoryName } = useParams();
 
+
+  
   useEffect(() => {
     let productsCollection = collection( db, "products")
 
@@ -31,9 +34,13 @@ const ItemListContainer = () => {
 
   return (
     <>
+     
       {/* aplicamos ternario para la pagina */}
       {items.length === 0 ? (
         <div>
+          <CartSkeleton />
+          <CartSkeleton />
+          <CartSkeleton />
           <CartSkeleton />
         </div>
       ) : (

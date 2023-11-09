@@ -14,7 +14,7 @@ export const useFetch = (endpoint, initial) => {
         .then((res) => setData(res.data))
         .catch( (error) => setErrorMessage(error))
         .finally(() => setIsLoading(false));
-    }, 2000)
+    }, 1000)
   }, [endpoint]);
 
   return { data, isLoading, errorMessage };

@@ -30,12 +30,9 @@ export const ItemDetail = ({
         </h4>
         <h2 className="product_price">${productSelected.price}</h2>
         <MaterialUi />
-
-{
-    initial && 
-    
-    <h4> Agregaste {initial} productos en el carrito 🛒 </h4>
-  }
+        <div style={{ margin: 30 }}>
+          {initial && <h4> Agregaste {initial} productos en el carrito 🛒 </h4>}
+        </div>
       </div>
 
       <div>
@@ -48,10 +45,7 @@ export const ItemDetail = ({
           Regresar atras
         </Button>
       </div>
-      
-      {/* {initial && <h2>Ya tienes {initial} unidades en el carrito</h2>} */}
-      
- 
+
       {showCounter ? (
         <div>
           <CounterContainer
@@ -66,11 +60,8 @@ export const ItemDetail = ({
           <Button variant="contained" style={{ margin: 20 }}>
             ir al carrito
           </Button>
-          </Link>
-          
+        </Link>
       )}
-      
     </div>
-    
   );
 };
