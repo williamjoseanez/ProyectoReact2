@@ -1,19 +1,48 @@
 import {
-    Button,
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Typography,
-  } from "@mui/material";
-  import { Link } from "react-router-dom";
-  
-  const ProductCard = ({ item }) => {
-    return (
-      <div className="cardOne">
-      <Card sx={{ maxWidth: 345 }}>
+  Avatar,
+  BottomNavigationAction,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import ShareIcon from "@mui/icons-material/Share";
+import { Link } from "react-router-dom";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { blue } from "@mui/material/colors";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+const ProductCard = ({ item }) => {
+  return (
+    <div>
+      <Card sx={{ maxWidth: 295, border: 5, borderRadius: 10 }}>
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: blue[200], color: "black"}} aria-label="recipe">
+                    <img style={{width:50}}
+            className="logo"
+            src="https://res.cloudinary.com/dheurnsr0/image/upload/v1699448231/Imagen_de_WhatsApp_2023-11-08_a_las_09.38.23_98bb59e9-removebg-preview_dcbooe.png"
+            alt="el tambito"
+          />     
+            </Avatar>
+          }
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon>
+           
+              </MoreVertIcon>
+            </IconButton>
+          }
+          title={item.category}
+          subheader={item.duracion}
+        />
         <CardMedia
-          sx={{ height: 140 }}
+          sx={{width:280, height: 175, borderRadius:5, marginLeft:0.3}}
           image={item.img}
           title={`image ${item.title}`}
         />
@@ -29,18 +58,32 @@ import {
           </Typography>
         </CardContent>
         <CardActions>
+          {/*icono de favorito ❤️ */}
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          {/* icono de compartir  */}
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+
           <Link to={`/itemDetail/${item.id}`}>
-            <Button size="small" variant="outlined">
+            <Button size="mediun" variant="outlined">
               Detalles
             </Button>
           </Link>
-         
+
+          <BottomNavigationAction
+        label="Nearby"
+            value="nearby"
+            href="https://maps.app.goo.gl/BXjwcnC34NyfXDsN9"
+            target="blank"
+        icon={<LocationOnIcon />}
+      />
         </CardActions>
-      
       </Card>
-      </div>
-    );
-  };
-  
-  export default ProductCard;
-  
+    </div>
+  );
+};
+
+export default ProductCard;

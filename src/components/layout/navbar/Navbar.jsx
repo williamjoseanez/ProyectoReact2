@@ -9,7 +9,7 @@ export const Navbar = () => {
         <Link to="/">
           <img
             className="logo"
-            src="https://res.cloudinary.com/dheurnsr0/image/upload/v1697506519/logo_bgcbzt.png"
+            src="https://res.cloudinary.com/dheurnsr0/image/upload/v1699448231/Imagen_de_WhatsApp_2023-11-08_a_las_09.38.23_98bb59e9-removebg-preview_dcbooe.png"
             alt="el tambito"
           />
         </Link>
@@ -18,11 +18,14 @@ export const Navbar = () => {
           <Link to="/">
             <li>Todos</li>
           </Link>
-          <Link to="/category/carrera">
-            <li>Carreras</li>
+          <Link to="/category/promociones">
+            <li>Promociones</li>
           </Link>
-          <Link to="/category/curso">
-            <li>Cursos</li>
+          <Link to="/category/granja">
+            <li>Granja</li>
+          </Link>
+          <Link to="/category/almacen">
+            <li>Almacen</li>
           </Link>
          
         </ul>

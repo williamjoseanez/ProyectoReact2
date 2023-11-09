@@ -20,8 +20,8 @@
     background-color: aliceblue;
     color: black;
     border-radius: 3rem;
-    width: 600px;
-    height: 350px;
+    width: 450px;
+    height: 300px;
  
 }
 
@@ -29,4 +29,13 @@
     color: maroon;
     font-size: 40px;
 }
+
+.noFoundLogo {
+    width: 450px;
+    height: 300px;
+    margin: auto;
+    display: flex;
+    border-color: white;
+    border-radius: 5%;
+   }
     

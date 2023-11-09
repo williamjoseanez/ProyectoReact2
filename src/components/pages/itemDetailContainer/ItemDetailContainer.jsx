@@ -1,12 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { products } from "../../../productsMock.js";
 import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext.jsx";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const [productSelected, setProductSelected] = useState({});
+  const [showCounter, setShowCounter] = useState(true);
 
   const { id } = useParams();
+
+  const { addToCart, getQuantityById } = useContext(CartContext);
+
+  let totalQuantity = getQuantityById(+id);
 
   // const navigate = useNavigate();
 
@@ -24,20 +31,38 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (cantidad) => {
-    let obj = {
+    let item = {
       ...productSelected,
       quantity: cantidad,
     };
-    console.log("este es el producto que se agrega", obj);
+    addToCart(item);
+
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "El producto se agrego correctamente",
+      showConfirmButton: false,
+      timer: 1000,
+    });
+
+    setShowCounter(false);
+
     // CODIGO hooks PARA NAVEGAR, ACA AL AGREGAR AL CARRITO SE REDIRIGE SOLO A LA PAGINA CARRITO
 
-    // setTimeout(() => {
+    // setTimeout(() => {s
     //   navigate("/cart");
     // }, 2000);
   };
   //aca finaliza el codigo hooks para hacer navegar solo cuando le das click en agregar al carrito,
   // arriba de todo esta el const navigate (hooks)
-  return <ItemDetail productSelected={productSelected} onAdd={onAdd} />;
+  return (
+    <ItemDetail
+      showCounter={showCounter}
+      productSelected={productSelected}
+      onAdd={onAdd}
+      initial={totalQuantity}
+    />
+  );
 };
 
 export default ItemDetailContainer;

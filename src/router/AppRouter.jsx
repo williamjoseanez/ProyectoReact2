@@ -4,7 +4,11 @@ import Layout from "../components/layout/Layout";
 import { customTheme } from "../themeConfig";
 import { routes } from "./menuRoutes";
 
+
+
 const AppRouter = () => {
+
+ 
   return (
     <ThemeProvider theme={customTheme}>
       <Routes>
