@@ -1,5 +1,6 @@
 import {
   Avatar,
+  BottomNavigationAction,
   Button,
   Card,
   CardActions,
@@ -12,8 +13,9 @@ import {
 import ShareIcon from "@mui/icons-material/Share";
 import { Link } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { red } from "@mui/material/colors";
+import { blue } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const ProductCard = ({ item }) => {
   return (
@@ -21,20 +23,26 @@ const ProductCard = ({ item }) => {
       <Card sx={{ maxWidth: 295, border: 5, borderRadius: 10 }}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: red[200], color: "black"}} aria-label="recipe">
-                        
+            <Avatar sx={{ bgcolor: blue[200], color: "black"}} aria-label="recipe">
+                    <img style={{width:50}}
+            className="logo"
+            src="https://res.cloudinary.com/dheurnsr0/image/upload/v1699448231/Imagen_de_WhatsApp_2023-11-08_a_las_09.38.23_98bb59e9-removebg-preview_dcbooe.png"
+            alt="el tambito"
+          />     
             </Avatar>
           }
           action={
             <IconButton aria-label="settings">
-              <MoreVertIcon />
+              <MoreVertIcon>
+           
+              </MoreVertIcon>
             </IconButton>
           }
           title={item.category}
           subheader={item.duracion}
         />
         <CardMedia
-          sx={{width:210, height: 105, margin: 5, borderRadius:5}}
+          sx={{width:280, height: 175, borderRadius:5, marginLeft:0.3}}
           image={item.img}
           title={`image ${item.title}`}
         />
@@ -42,9 +50,9 @@ const ProductCard = ({ item }) => {
           <Typography gutterBottom variant="h5" component="div">
             {item.title}
           </Typography>
-          {/* <Typography variant="" color="text.secondary">
+          <Typography variant="" color="text.secondary">
             {item.description}
-          </Typography> */}
+          </Typography>
           <Typography variant="body2" color="text.secondary">
             $ {item.price} .-
           </Typography>
@@ -64,6 +72,14 @@ const ProductCard = ({ item }) => {
               Detalles
             </Button>
           </Link>
+
+          <BottomNavigationAction
+        label="Nearby"
+            value="nearby"
+            href="https://maps.app.goo.gl/BXjwcnC34NyfXDsN9"
+            target="blank"
+        icon={<LocationOnIcon />}
+      />
         </CardActions>
       </Card>
     </div>

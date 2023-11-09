@@ -8,16 +8,24 @@ padding-top: 1rem;
 }
 
 .carrito_cart {
-  border-radius: 10%;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding-top: 3rem;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
   color: antiquewhite;
-}
+  }
 
 .carrito_cart_img {
-  width: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  height: 150;
+}
+
+#boton_compra {
+  margin-left: 5rem;
   text-align: center;
 }
 
