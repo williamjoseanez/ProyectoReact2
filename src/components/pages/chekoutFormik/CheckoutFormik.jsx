@@ -65,14 +65,8 @@ const CheckoutFormik = () => {
           title: `Gracias por su compra, nu N de compra es:  ${orderId}`,
           showConfirmButton: true,
           timer: false,
-        }).then((result) => {
-          if (result.isConfirmed) {
-            
-            history.push("/");
-          }
         })
-      ) : 
-       (
+      ) : (
         <form className="form_style" onSubmit={handleSubmit}>
           <TextField
             name="nombre"
