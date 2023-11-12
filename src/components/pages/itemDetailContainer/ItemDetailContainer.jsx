@@ -47,14 +47,9 @@ const ItemDetailContainer = () => {
 
     setShowCounter(false);
 
-    // CODIGO hooks PARA NAVEGAR, ACA AL AGREGAR AL CARRITO SE REDIRIGE SOLO A LA PAGINA CARRITO
 
-    // setTimeout(() => {s
-    //   navigate("/cart");
-    // }, 2000);
   };
-  //aca finaliza el codigo hooks para hacer navegar solo cuando le das click en agregar al carrito,
-  // arriba de todo esta el const navigate (hooks)
+ 
   return (
     <ItemDetail
       showCounter={showCounter}

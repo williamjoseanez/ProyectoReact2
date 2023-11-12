@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import CartSkeleton from "../../common/cartSkeleton/cartSkeleton";
 import { db } from "../../../firebaseconfig";
+import CartSkeleton from "../../common/cartSkeleton/cartSkeleton";
+
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -28,7 +29,7 @@ const ItemListContainer = () => {
       let newArray = res.docs.map((product) => {
         return { ...product.data(), id: product.id };
       });
-// aca con este let ocultamos el producto que no tenga stock
+      // aca con este let ocultamos el producto que no tenga stock
       let productsFiltrado = newArray.filter((elemento) => elemento.stock > 0);
 
       setItems(productsFiltrado);

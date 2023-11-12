@@ -2,6 +2,8 @@ import { Skeleton } from "@mui/material"
 
 
 const CartSkeleton = () => {
+  
+  
   return (
       <div style={{ display: "flex", gap: 20, padding: 32 }}>
             <div>
