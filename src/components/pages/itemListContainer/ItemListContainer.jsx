@@ -3,8 +3,7 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../../../firebaseconfig";
-import CartSkeleton from "../../common/cartSkeleton/cartSkeleton";
-
+import { Skeleton } from "@mui/material";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -41,10 +40,32 @@ const ItemListContainer = () => {
       {/* aplicamos ternario para la pagina */}
       {items.length === 0 ? (
         <div>
-          <CartSkeleton />
-          <CartSkeleton />
-          <CartSkeleton />
-          <CartSkeleton />
+          <div style={{ display: "flex", gap: 20, padding: 32 }}>
+            <div>
+              <Skeleton variant="rectangular" width={250} height={118} />
+              <Skeleton width="20%" />
+              <Skeleton width="30%" />
+              <Skeleton variant="text" width={40} height={40} />
+            </div>
+            <div>
+              <Skeleton variant="rectangular" width={250} height={118} />
+              <Skeleton width="20%" />
+              <Skeleton width="30%" />
+              <Skeleton variant="text" width={40} height={40} />
+            </div>
+            <div>
+              <Skeleton variant="rectangular" width={250} height={118} />
+              <Skeleton width="20%" />
+              <Skeleton width="30%" />
+              <Skeleton variant="text" width={40} height={40} />
+            </div>
+            <div>
+              <Skeleton variant="rectangular" width={250} height={118} />
+              <Skeleton width="20%" />
+              <Skeleton width="30%" />
+              <Skeleton variant="text" width={40} height={40} />
+            </div>
+          </div>
         </div>
       ) : (
         <ItemList items={items} />
