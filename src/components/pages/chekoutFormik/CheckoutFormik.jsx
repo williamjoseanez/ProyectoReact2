@@ -60,7 +60,7 @@ const CheckoutFormik = () => {
     <>
       {orderId ? (
         Swal.fire({
-          position: "top-center",
+          position: "center",
           icon: "success",
           title: `Gracias por su compra, nu N de compra es:  ${orderId}`,
           showConfirmButton: true,
