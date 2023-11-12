@@ -5,36 +5,38 @@ import { useParams } from "react-router-dom";
 import CartSkeleton from "../../common/cartSkeleton/cartSkeleton";
 import { db } from "../../../firebaseconfig";
 
-
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { categoryName } = useParams();
 
-
-  
   useEffect(() => {
-    let productsCollection = collection( db, "products")
+    let productsCollection = collection(db, "products");
 
-    let consulta = undefined
+    let consulta = undefined;
 
     if (!categoryName) {
-      consulta = productsCollection
+      consulta = productsCollection;
     } else {
-      consulta = query(productsCollection, where("category", "==", categoryName));
+      consulta = query(
+        productsCollection,
+        where("category", "==", categoryName)
+      );
     }
 
-    getDocs(consulta).then(res => {
-      let newArray = res.docs.map(product => {
-        return {...product.data(), id: product.id}
-      })
-      setItems(newArray)
+    getDocs(consulta).then((res) => {
+      let newArray = res.docs.map((product) => {
+        return { ...product.data(), id: product.id };
+      });
+// aca con este let ocultamos el producto que no tenga stock
+      let productsFiltrado = newArray.filter((elemento) => elemento.stock > 0);
+
+      setItems(productsFiltrado);
     });
   }, [categoryName]);
 
   return (
     <>
-     
       {/* aplicamos ternario para la pagina */}
       {items.length === 0 ? (
         <div>

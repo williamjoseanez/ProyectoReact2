@@ -11,26 +11,6 @@ const Cart = () => {
     useContext(CartContext);
 
   let total = calculateTotalPrice();
-
-  // const deletProducSelec = () => {
-  //   Swal.fire({
-  //     title: "Seguro quiere Eliminar este Articulo?",
-  //     showDenyButton: true,
-  //     showCancelButton: false,
-  //     confirmButtonText: "Eliminar",
-  //     denyButtonText: `Cancelar`
-  //   }).then((result) => {
-
-  //     /* Read more about isConfirmed, isDenied below */
-  //     if (result.isConfirmed) {
-  //       // deleteProductById(product.id)
-  //           Swal.fire("Confirmado!", "", "success");
-  //     } else if (result.isDenied) {
-  //       Swal.fire("Volver al Carrito", "", "info");
-  //     }
-  //   });
-  // }
-
   const clarCartWithAlert = () => {
     Swal.fire({
       title: "Seguro quiere Vaciar el carrito?",
@@ -61,20 +41,20 @@ const Cart = () => {
         </div>
       )}
 
-      {cart.map((product, sumar, restar) => (
+      {cart.map((product) => (
         <div key={product.id} className="carrito_cart">
           <div className="carrito_cart_img">
             <img className="imagen_carrito" src={product.img} alt="" />
           </div>
 
-          <h2>{product.title}</h2>
-          <Button onClick={restar}>🔽</Button>
+          <h3>{product.title}</h3>
+          <Button onClick={"restar"}>🔽</Button>
 
-          <h2>Cantidad: {product.quantity}</h2>
-          <Button onClick={sumar}>🔼</Button>
+          <h3>Cantidad: {product.quantity}</h3>
+          <Button onClick={"sumar"}>🔼</Button>
 
           <span>${product.price} </span>
-          <h2> Total : $ {product.price * product.quantity}</h2>
+          <h3> Total : $ {product.price * product.quantity}</h3>
 
           <Button onClick={() => deleteProductById(product.id)}>
             <DeleteSweepIcon />

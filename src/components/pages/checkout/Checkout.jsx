@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../../context/CartContext";
+import {serverTimestamp} from "firebase/firestore"
 
 const Checkout = () => {
   const [userInfo, setUserInfo] = useState({
     nombre: "",
     apellido: "",
     email: "",
+ 
   });
+
+  const { cart, getTotalprice } = useContext(CartContext)
+  
+  const total = getTotalprice()
 
   const handleChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
@@ -13,6 +20,13 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let order = {
+      buyer: userInfo,
+      items: cart,
+      total,
+      date : serverTimestamp()
+    }
   };
 
   return (
