@@ -3,7 +3,7 @@ import "./error.css";
 
 const ItemList = ({ items }) => {
   return (
-    <div className="items_List">
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around' }}>
       {items.map((item) => {
         return <ProductCard key={item.id} item={item} />;
       })}

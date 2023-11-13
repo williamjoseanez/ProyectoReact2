@@ -1,5 +1,4 @@
 import {
-  Alert,
   Avatar,
   BottomNavigationAction,
   Button,
@@ -17,12 +16,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { blue } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import "./card.css";
-import Swal from "sweetalert2";
+
 
 const ProductCard = ({ item }) => {
   return (
-    <Card sx={{ maxWidth: 295, border: 5, borderRadius: 10 }}>
+    <Card sx={{ maxWidth: 295, border: 5, borderRadius: 10, display:'flex', flexDirection:'column' }}>
       <CardHeader
         avatar={
           <Avatar
@@ -47,7 +45,7 @@ const ProductCard = ({ item }) => {
       />
 
       <CardMedia
-        sx={{ width: 280, height: 175, borderRadius: 5, marginLeft: 0.3 }}
+        sx={{ width: '100%', height: 175, borderRadius: 5}}
         image={item.img}
         title={`image ${item.title}`}
       />
@@ -68,6 +66,10 @@ const ProductCard = ({ item }) => {
         {/*icono de favorito ❤️ */}
         <IconButton
           sx={{
+            flexDirection: 'column',
+            '@media (min-width: 600px)': {
+              flexDirection: 'row',
+            },
             color: "blue",
             transition: "color 0.3s",
             "&:hover": {
