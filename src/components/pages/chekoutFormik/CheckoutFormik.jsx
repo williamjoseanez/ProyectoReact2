@@ -1,4 +1,10 @@
-import { Button, TextField } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  TextField,
+  Typography,
+} from "@mui/material";
 import "./Checkout.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -8,7 +14,7 @@ import { useContext, useState } from "react";
 import { serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebaseconfig";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
-import Swal from "sweetalert2";
+
 
 const CheckoutFormik = () => {
   const { cart, calculateTotalPrice, clearCart } = useContext(CartContext);
@@ -59,14 +65,46 @@ const CheckoutFormik = () => {
   return (
     <>
       {orderId ? (
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: `Gracias por su compra, nu N de compra es:  ${orderId}`,
-        
-          showConfirmButton: true,
-          timer: false,
-        })
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "70vh",
+          }}
+        >
+          <Card
+            sx={{
+              maxWidth: 650,
+              marginLeft: "40px",
+              marginTop: "45px",
+            }}
+          >
+            <CardContent>
+              <Typography variant="h2" style={{ fontSize: "30px" }}>
+                ¡Gracias Tu Compra se proceso Correctamente!
+              </Typography>
+              <Typography
+                variant="body1"
+                style={{
+                  marginLeft: "35px",
+                  marginBottom: "25px",
+                  marginTop: "20px",
+                  marginRight: "20px",
+                }}
+              >
+                Su Numero de Comprobante es: {orderId}
+              </Typography>
+              <Typography>
+                
+              </Typography>
+
+              <Link to="/" size="small" style={{ marginLeft: "35px" }}>
+                <Button variant="contained">Seguir Comprando</Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </div>
       ) : (
         <form className="form_style" onSubmit={handleSubmit}>
           <TextField
@@ -105,6 +143,7 @@ const CheckoutFormik = () => {
           <Button variant="contained" type="submit">
             Enviar
           </Button>
+
           <Link to="/cart">
             <Button variant={"outlined"} type="button">
               Volver al Carrito

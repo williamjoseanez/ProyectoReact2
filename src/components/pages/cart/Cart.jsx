@@ -48,10 +48,10 @@ const Cart = () => {
           </div>
 
           <h3>{product.title}</h3>
-          <Button onClick={"restar"}>🔽</Button>
+          {/* <Button onClick={"restar"}>🔽</Button> */}
 
           <h3>Cantidad: {product.quantity}</h3>
-          <Button onClick={"sumar"}>🔼</Button>
+          {/* <Button onClick={"sumar"}>🔼</Button> */}
 
           <span>${product.price} </span>
           <h3> Total : $ {product.price * product.quantity}</h3>
