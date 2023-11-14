@@ -35,7 +35,7 @@ export const ItemDetail = ({
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <Button
           variant="contained"
           disableElevation
@@ -44,7 +44,7 @@ export const ItemDetail = ({
           {" "}
           Regresar atras
         </Button>
-      </div>
+      </div> */}
 
       {showCounter ? (
         <div>
