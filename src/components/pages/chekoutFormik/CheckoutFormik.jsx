@@ -15,7 +15,6 @@ import { serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebaseconfig";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 
-
 const CheckoutFormik = () => {
   const { cart, calculateTotalPrice, clearCart } = useContext(CartContext);
   const total = calculateTotalPrice();
@@ -83,6 +82,7 @@ const CheckoutFormik = () => {
             <CardContent>
               <Typography variant="h2" style={{ fontSize: "30px" }}>
                 ¡Gracias Tu Compra se proceso Correctamente!
+                                
               </Typography>
               <Typography
                 variant="body1"
@@ -95,10 +95,6 @@ const CheckoutFormik = () => {
               >
                 Su Numero de Comprobante es: {orderId}
               </Typography>
-              <Typography>
-                
-              </Typography>
-
               <Link to="/" size="small" style={{ marginLeft: "35px" }}>
                 <Button variant="contained">Seguir Comprando</Button>
               </Link>
@@ -139,6 +135,10 @@ const CheckoutFormik = () => {
             onChange={handleChange}
             error={errors.email ? true : false}
           />
+
+          <Typography>
+            <h2>El total a pagar es: $ {total}</h2>
+          </Typography>
 
           <Button variant="contained" type="submit">
             Enviar
