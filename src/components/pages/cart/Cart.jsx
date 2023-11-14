@@ -68,14 +68,17 @@ const Cart = () => {
             <h2>El total a pagar es: $ {total}</h2>
           </div>
           <div className="boton_carrito">
-            <Link to="/checkout">
-              <Button variant="contained">Ir A Pagar</Button>
-            </Link>
-
-            <Button variant="contained" onClick={clarCartWithAlert}>
-              {" "}
-              Vaciar Carrito
-            </Button>
+            <div>
+              <Link to="/checkout">
+                <Button variant="contained">Ir A Pagar</Button>
+              </Link>
+            </div>
+            <div>
+              <Button variant="contained" onClick={clarCartWithAlert}>
+                {" "}
+                Vaciar Carrito
+              </Button>
+            </div>
             <div>
               <Button
                 variant="contained"
