@@ -12,9 +12,9 @@ export const ItemDetail = ({
 }) => {
   return (
     <div className="detalle">
-      <div>
+      <div className="detalle_producto">
         <img
-          className="noFoundLogo"
+          className="tamanoImagen"
           src={productSelected.img}
           alt="productos"
         />

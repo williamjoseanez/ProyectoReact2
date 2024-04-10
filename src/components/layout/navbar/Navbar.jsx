@@ -1,10 +1,16 @@
+import { useState } from "react";
 import CartWidget from "../../common/cartWidget/CartWidget";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <>
       <div className={"containerNavbar"}>
@@ -16,23 +22,25 @@ export const Navbar = () => {
           />
         </Link>
 
-        <ul className="categories">
+        <ul className={`categories ${isMenuOpen ? "show" : ""}`}>
           <Link to="/">
-            <li>Todos</li>
+            <li onClick={() => setIsMenuOpen(false)}>Todos</li>
           </Link>
           <Link to="/category/promociones">
-            <li>Promociones</li>
+            <li onClick={() => setIsMenuOpen(false)}>Promociones</li>
           </Link>
           <Link to="/category/granja">
-            <li>Granja</li>
+            <li onClick={() => setIsMenuOpen(false)}>Granja</li>
           </Link>
           <Link to="/category/almacen">
-            <li>Almacen</li>
+            <li onClick={() => setIsMenuOpen(false)}>Almacen</li>
           </Link>
-         
         </ul>
 
         <CartWidget />
+
+        {/* Botón de hamburguesa */}
+        <MenuIcon className="menuIcon" onClick={toggleMenu} />
       </div>
     </>
   );

@@ -50,17 +50,25 @@
 }
 
 .imagen_carrito {
+
   max-width: 100%;
   height: auto;
-  margin: 10px;
+  margin: 20px;
   border-radius: 10%;
 }
 
+.tamanoImagen{
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+
+}
 .boton_carrito {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   cursor: pointer;
-  justify-content: flex-end;
+  justify-content: center; /* Centrar verticalmente los botones */
+  align-items: center; /* Centrar horizontalmente los botones */
   margin: 1rem;
   gap: 1rem;
 }
@@ -70,9 +78,5 @@
   .carrito_cart {
     flex-direction: column;
     align-items: center;
-  }
-
-  .boton_carrito {
-    flex-direction: column;
   }
 }

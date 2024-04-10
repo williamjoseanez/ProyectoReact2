@@ -4,6 +4,8 @@
   background-color: rgba(7, 131, 189, 0.808);
   align-items: center;
   padding: 10px;
+  position: relative; /* Añadir position relative */
+  z-index: 1; /* Ajustar el z-index para que esté por encima de las cards */
 }
 
 .categories {
@@ -27,19 +29,37 @@
   height: auto;
 }
 
+/* Mostrar/ocultar el menú en dispositivos pequeños */
+.categories {
+  display: flex;
+}
+
+.categories.show {
+  display: none;
+}
+
+.menuIcon {
+  display: none; /* Ocultar el icono de hamburguesa en dispositivos grandes */
+}
+
 @media (max-width: 768px) {
-  .containerNavbar {
-    flex-direction: column; /* Cambia a una columna en pantallas más pequeñas */
-    align-items: flex-start; /* Alinea al inicio en pantallas más pequeñas */
+  .categories {
+    display: none; /* Ocultar el menú en dispositivos pequeños */
   }
 
-  .categories {
-    margin-top: 10px;
-    flex-direction: column; /* Cambia a una columna en pantallas más pequeñas */
+  .categories.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .categories li {
     margin-right: 0;
     margin-bottom: 10px;
+  }
+
+  .menuIcon {
+    display: block; /* Mostrar el icono de hamburguesa en dispositivos pequeños */
+    cursor: pointer;
   }
 }

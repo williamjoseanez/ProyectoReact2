@@ -20,7 +20,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const ProductCard = ({ item }) => {
   return (
-    <Card sx={{ maxWidth: 295, border: 5, borderRadius: 7, display:'flex', flexDirection:'column', marginBlock:0.5}}>
+    <Card sx={{ maxWidth: 295, border: 5, borderRadius: 7, display:'flex', flexDirection:'column', marginBlock:0.5, marginBottom: '2rem'}}>
       <CardHeader
         avatar={
           <Avatar
