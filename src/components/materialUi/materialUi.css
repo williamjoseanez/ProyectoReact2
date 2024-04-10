@@ -1,15 +1,12 @@
-
-
-/* .presentacion {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1rem;
-    margin: 3rem;} */
-
-
-
 .tamanio {
-    height: 200px;
-    width: 200px;
-    padding: 2rem;
+    height: 20vw; /* Altura relativa al ancho del viewport */
+    width: 20vw; /* Ancho relativo al ancho del viewport */
+    padding: 2%; /* Padding relativo al ancho del viewport */
+}
+
+@media (max-width: 768px) {
+    .tamanio {
+        height: 30vw; /* Ajuste para pantallas más pequeñas */
+        width: 30vw; /* Ajuste para pantallas más pequeñas */
+    }
 }

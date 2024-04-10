@@ -1,8 +1,8 @@
+/* Estilos base */
 .Cart_texto {
   display: flex;
   justify-content: center;
   padding-top: 1rem;
-  /* background:linear-gradient(to bottom, #000046, #71abbb ); */
   color: aliceblue;
   align-items: center;
 }
@@ -14,10 +14,32 @@
   gap: 0.5rem;
   padding-top: 2rem;
   color: antiquewhite;
-
 }
 
+/* Media queries para dispositivos de pantalla pequeña (por ejemplo, teléfonos móviles) */
+@media screen and (max-width: 600px) {
+  .Cart_texto {
+    flex-direction: column; /* Cambiar a dirección de columna */
+    text-align: center; /* Centrar el texto */
+  }
 
+  .carrito_cart {
+    flex-direction: column; /* Cambiar a dirección de columna */
+    padding-top: 1rem; /* Reducir el padding superior */
+  }
+}
+
+/* Media queries para dispositivos de pantalla mediana (por ejemplo, tabletas) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .carrito_cart {
+    gap: 1rem; /* Aumentar el espacio entre elementos */
+  }
+}
+
+/* Media queries para dispositivos de pantalla grande (por ejemplo, computadoras de escritorio) */
+@media screen and (min-width: 1025px) {
+  /* Aquí puedes agregar estilos adicionales si es necesario */
+}
 
 .carrito_cart_img {
   display: flex;

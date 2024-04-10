@@ -1,6 +1,12 @@
 .center {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 2%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 2%; /* Ajusta el relleno según sea necesario */
+
+  /* Estilos para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Cambia a una columna en pantallas más pequeñas */
+    padding: 5%; /* Ajusta el relleno para pantallas más pequeñas */
   }
+}

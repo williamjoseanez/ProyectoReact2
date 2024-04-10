@@ -1,10 +1,14 @@
 .div_footer {
-  width: "100%";
+  width: 100%; /* Ancho del 100% para ocupar todo el ancho disponible */
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 1rem;
   color: rgb(14, 13, 13);
 
-
+  /* Estilos para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Cambia a una columna en pantallas más pequeñas */
+    padding: 2rem 0; /* Ajusta el relleno verticalmente */
+  }
 }

@@ -1,8 +1,10 @@
+/* Estilos base */
 .formu_centro {
   display: flex;
   justify-content: center;
   color: aliceblue;
 }
+
 .form_style {
   display: flex;
   flex-direction: column;
@@ -10,14 +12,14 @@
   background-color: rgb(145, 185, 231);
   max-width: 400px;
   gap: 1rem;
-  margin: 10% auto;
+  margin: 10% auto; /* Centrar verticalmente y alinear horizontalmente */
   padding: 20px;
 }
 
-/* Estilos para pantallas más pequeñas */
+/* Media queries para pantallas más pequeñas */
 @media (max-width: 768px) {
   .form_style {
-    max-width: 100%;
-    margin: 50% 10px;
+    max-width: 90%; /* Reducir el ancho máximo */
+    margin: 10% auto; /* Centrar verticalmente y alinear horizontalmente */
   }
 }
